@@ -24,3 +24,13 @@ function createGallerySrtucture(arrOfGallaryItems) {
     return galleryLinkEl;
   });
 }
+
+let gallery = new SimpleLightbox(".gallery a", {
+  captionPosition: "bottom",
+  captionDelay: "250",
+  captionsData: "alt",
+});
+
+console.dir(gallery);
+
+gallery.on("show.simplelightbox", function () {});
