@@ -11,6 +11,7 @@ refs.divGalleryEl.addEventListener("click", onOpenModalImage);
 
 function onOpenModalImage(event) {
   /* if (event.target.classList.value !== "gallery__image") return; */
+  /* if (event.target.classList.contains(".gallery__image")) return; */
   if (event.target.nodeName !== "IMG") return;
 
   event.preventDefault();
