@@ -1,8 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-console.log(galleryItems);
-
 const refs = {
   divGalleryEl: document.querySelector(".gallery"),
 };
@@ -33,7 +31,18 @@ refs.divGalleryEl.append(...insertGalleryEl);
 refs.divGalleryEl.addEventListener("click", onOpenModalImage);
 
 function onOpenModalImage(event) {
+  if (event.target.classList.value !== "gallery__image") return;
+
   event.preventDefault();
-  console.log(event);
-  console.log("original image: ", event.target.dataset.source);
+
+  const instance = basicLightbox.create(`
+    <img src=${event.target.dataset.source} width=1280>
+`);
+
+  instance.show();
+
+  document.addEventListener("keydown", (event) => {
+    if (event.code !== "Escape") return;
+    instance.close();
+  });
 }
