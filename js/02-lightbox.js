@@ -31,6 +31,4 @@ let gallery = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
 });
 
-console.dir(gallery);
-
 gallery.on("show.simplelightbox", function () {});
